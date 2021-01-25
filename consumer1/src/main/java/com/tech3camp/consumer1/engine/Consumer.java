@@ -2,6 +2,7 @@ package com.tech3camp.consumer1.engine;
 
 
 
+import com.tech3camp.consumer1.Alert;
 import com.tech3camp.consumer1.City;
 import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.Decoder;
@@ -20,14 +21,25 @@ public class Consumer {
 
     private final Logger logger = LoggerFactory.getLogger(Consumer.class);
 
-    @KafkaListener(topics = "weather", groupId = "consumer-1")
-    public void consume(byte [] message) throws IOException {
+    @KafkaListener(topics = "weather", groupId = "consumer-2")
+    public void consumeWeatherTopic(byte [] message) throws IOException {
         final Decoder decoder = DecoderFactory.get().binaryDecoder(new ByteArrayInputStream(message), null);
         DatumReader<City> reader = new SpecificDatumReader<>(City.class);
 
 
         City city = reader.read(null, decoder);
 
-        logger.info(String.format("#### -> Consumed message but extracted from WeatherData object -> %s", city.toString()));
+        logger.info(String.format("#### -> Consumed message from Topic Weather and extracted from City object -> %s", city.toString()));
+    }
+
+    @KafkaListener(topics = "alert", groupId = "consumer-2")
+    public void consumeAlertTopic(byte [] message) throws IOException {
+        final Decoder decoder = DecoderFactory.get().binaryDecoder(new ByteArrayInputStream(message), null);
+        DatumReader<Alert> reader = new SpecificDatumReader<>(Alert.class);
+
+
+        Alert alert = reader.read(null, decoder);
+
+        logger.info(String.format("#### -> Consumed message from Topic Alert and extracted from  Alert object -> %s", alert.toString()));
     }
 }
