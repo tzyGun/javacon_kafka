@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package com.tech3camp.consumer1;
+package com.tech3camp.consumer2;
 
 import org.apache.avro.specific.SpecificData;
 
@@ -13,7 +13,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
   private static final long serialVersionUID = 3643129960681368251L;
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Alert\",\"namespace\":\"com.tech3camp.consumer1\",\"fields\":[{\"name\":\"message\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
-  @Deprecated public java.lang.String message;
+  @Deprecated public String message;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -26,13 +26,13 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
    * All-args constructor.
    * @param message The new value for message
    */
-  public Alert(java.lang.String message) {
+  public Alert(String message) {
     this.message = message;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
   // Used by DatumWriter.  Applications should not call.
-  public java.lang.Object get(int field$) {
+  public Object get(int field$) {
     switch (field$) {
     case 0: return message;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
@@ -41,9 +41,9 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
 
   // Used by DatumReader.  Applications should not call.
   @SuppressWarnings(value="unchecked")
-  public void put(int field$, java.lang.Object value$) {
+  public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: message = (java.lang.String)value$; break;
+    case 0: message = (String)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -52,7 +52,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
    * Gets the value of the 'message' field.
    * @return The value of the 'message' field.
    */
-  public java.lang.String getMessage() {
+  public String getMessage() {
     return message;
   }
 
@@ -60,7 +60,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
    * Sets the value of the 'message' field.
    * @param value the value to set.
    */
-  public void setMessage(java.lang.String value) {
+  public void setMessage(String value) {
     this.message = value;
   }
 
@@ -68,8 +68,8 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
    * Creates a new Alert RecordBuilder.
    * @return A new Alert RecordBuilder
    */
-  public static com.tech3camp.consumer1.Alert.Builder newBuilder() {
-    return new com.tech3camp.consumer1.Alert.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -77,8 +77,8 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
    * @param other The existing builder to copy.
    * @return A new Alert RecordBuilder
    */
-  public static com.tech3camp.consumer1.Alert.Builder newBuilder(com.tech3camp.consumer1.Alert.Builder other) {
-    return new com.tech3camp.consumer1.Alert.Builder(other);
+  public static Builder newBuilder(Builder other) {
+    return new Builder(other);
   }
 
   /**
@@ -86,8 +86,8 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
    * @param other The existing instance to copy.
    * @return A new Alert RecordBuilder
    */
-  public static com.tech3camp.consumer1.Alert.Builder newBuilder(com.tech3camp.consumer1.Alert other) {
-    return new com.tech3camp.consumer1.Alert.Builder(other);
+  public static Builder newBuilder(Alert other) {
+    return new Builder(other);
   }
 
   /**
@@ -96,7 +96,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<Alert>
     implements org.apache.avro.data.RecordBuilder<Alert> {
 
-    private java.lang.String message;
+    private String message;
 
     /** Creates a new Builder */
     private Builder() {
@@ -107,7 +107,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(com.tech3camp.consumer1.Alert.Builder other) {
+    private Builder(Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.message)) {
         this.message = data().deepCopy(fields()[0].schema(), other.message);
@@ -119,7 +119,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
      * Creates a Builder by copying an existing Alert instance
      * @param other The existing instance to copy.
      */
-    private Builder(com.tech3camp.consumer1.Alert other) {
+    private Builder(Alert other) {
             super(SCHEMA$);
       if (isValidValue(fields()[0], other.message)) {
         this.message = data().deepCopy(fields()[0].schema(), other.message);
@@ -131,7 +131,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
       * Gets the value of the 'message' field.
       * @return The value.
       */
-    public java.lang.String getMessage() {
+    public String getMessage() {
       return message;
     }
 
@@ -140,7 +140,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
       * @param value The value of 'message'.
       * @return This builder.
       */
-    public com.tech3camp.consumer1.Alert.Builder setMessage(java.lang.String value) {
+    public Builder setMessage(String value) {
       validate(fields()[0], value);
       this.message = value;
       fieldSetFlags()[0] = true;
@@ -160,7 +160,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
       * Clears the value of the 'message' field.
       * @return This builder.
       */
-    public com.tech3camp.consumer1.Alert.Builder clearMessage() {
+    public Builder clearMessage() {
       message = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -170,7 +170,7 @@ public class Alert extends org.apache.avro.specific.SpecificRecordBase implement
     public Alert build() {
       try {
         Alert record = new Alert();
-        record.message = fieldSetFlags()[0] ? this.message : (java.lang.String) defaultValue(fields()[0]);
+        record.message = fieldSetFlags()[0] ? this.message : (String) defaultValue(fields()[0]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
