@@ -8,7 +8,7 @@ plugins {
 	id "com.commercehub.gradle.plugin.avro-base" version "0.9.1"
 }
 
-group = 'com.ctech'
+group = 'com.tech3camp'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '14'
 
@@ -29,8 +29,8 @@ dependencies {
 apply plugin: "com.commercehub.gradle.plugin.avro-base"
 
 def generatedResources = "generated"
-def moveToDirectory = "src/main/java/com/ctech/"
-def generatedResourcesFullPath = generatedResources + "/com/ctech/consumer2"
+def moveToDirectory = "src/main/java/com/tech3camp/"
+def generatedResourcesFullPath = generatedResources + "/com/tech3camp/consumer2"
 
 task generateAvro( type: com.commercehub.gradle.plugin.avro.GenerateAvroJavaTask) {
 	source("src/avro/")

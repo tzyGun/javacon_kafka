@@ -12,7 +12,7 @@ public class WeatherDataSchema implements AvroSchema {
     @Override
     public String buildSchema() {
         Schema weatherData = SchemaBuilder.record("WeatherData")
-                                          .namespace("com.ctech.producer")
+                                          .namespace("com.tech3camp.producer")
                                           .fields()
                                           .requiredString("temperature")
                                           .requiredString("pressure")
@@ -20,7 +20,7 @@ public class WeatherDataSchema implements AvroSchema {
                                           .endRecord();
 
         Schema city = SchemaBuilder.record("City")
-                                     .namespace("com.ctech.producer")
+                                     .namespace("com.tech3camp.producer")
                                      .fields()
                                      .requiredString("cityname")
                                      .requiredString("voivodeship")
