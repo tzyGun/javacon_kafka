@@ -31,7 +31,7 @@ public class AlertService {
                 alert.setMessage("Alert RCB : Załóż czapkę, jest ślisko, nie chódź w sandałach");
                 try {
                     this.producer.sendMessage(ByteArraySerializerUtil.serialize(alert));
-                    logger.info(String.format("#### -> Produced alert from Consumer 1 -> %s", alert.toString()));
+                    logger.info(String.format("#### -> Produced alert from Consumer 1 (AlertWeatherStation) -> %s", alert.toString()));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

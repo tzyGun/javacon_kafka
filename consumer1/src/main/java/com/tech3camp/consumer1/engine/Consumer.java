@@ -33,7 +33,7 @@ public class Consumer {
 
 
         City city = reader.read(null, decoder);
-        logger.info(String.format("#### -> Consumed message from Topic Weather and  extracted from WeatherData object -> %s", city.toString()));
+        logger.info(String.format("#### -> Consumed message from Topic Weather and  extracted from WeatherData object (AlertWeatherStation) -> %s", city.toString()));
         alertService.sendAlertIfTempBelow(city);
     }
 }

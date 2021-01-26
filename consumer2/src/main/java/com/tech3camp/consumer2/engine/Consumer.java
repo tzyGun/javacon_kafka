@@ -28,7 +28,7 @@ public class Consumer {
 
         City city = reader.read(null, decoder);
 
-        logger.info(String.format("#### -> Consumed message from Topic Weather and extracted from City object -> %s", city.toString()));
+        logger.info(String.format("#### -> Consumed message (on WeatherStationConsumer) from Topic Weather and extracted from City object -> %s", city.toString()));
     }
 
     @KafkaListener(topics = "alert", groupId = "consumer-2")
@@ -39,6 +39,6 @@ public class Consumer {
 
         Alert alert = reader.read(null, decoder);
 
-        logger.info(String.format("#### -> Consumed message from Topic Alert and extracted from  Alert object -> %s", alert.toString()));
+        logger.info(String.format("#### -> Consumed message (on WeatherStationConsumer) from Topic Alert and extracted from  Alert object -> %s", alert.toString()));
     }
 }

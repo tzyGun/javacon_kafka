@@ -1,0 +1,19 @@
+POST http://localhost:8000/kafka/publish HTTP/1.1
+content-type: application/json
+
+{
+    "cityName": "Gdańsk",
+    "voivodeship": "Pomorskie",
+    "weatherData": [
+        {
+            "temperature": "-25",
+            "pressure": "1050hPa",
+            "message": "Wieje mocno"
+        },
+        {
+            "temperature": "10",
+            "pressure": "1050hPa",
+            "message": "Wieje mocno bardzo"
+        }
+    ]
+}
