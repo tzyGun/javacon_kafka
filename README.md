@@ -1,5 +1,5 @@
 # Apache Kafka sample application
-
+Things that were presented on webinar meeting are on "chained_topics" branch. So switch to have the same state of presented application.
 ## Prerequisites
 
 Before running the project
