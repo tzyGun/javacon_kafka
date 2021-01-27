@@ -1,19 +1,17 @@
-POST http://localhost:8000/kafka/publish HTTP/1.1
+POST http://localhost:8083/connectors HTTP/1.1
 content-type: application/json
 
 {
-    "cityName": "Gdańsk",
-    "voivodeship": "Pomorskie",
-    "weatherData": [
-        {
-            "temperature": "-25",
-            "pressure": "1050hPa",
-            "message": "Wieje mocno"
-        },
-        {
-            "temperature": "10",
-            "pressure": "1050hPa",
-            "message": "Wieje mocno bardzo"
-        }
-    ]
-}
+  "name": "inventory-connector",
+  "config": {
+      "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+      "tasks.max": "1",
+      "database.hostname": "0.0.0.0",
+      "database.port": "5432",
+      "database.user": "postgres",
+      "database.password": "postgres",
+      "database.dbname" : "postgres",
+      "database.server.name": "postgres",
+      "schema.whitelist": "inventory"
+      }
+ }
