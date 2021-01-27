@@ -1,5 +1,4 @@
-package com.tech3camp.consumer2.engine;
-
+package com.tech3camp.consumer1.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,13 +10,13 @@ import org.springframework.stereotype.Service;
 public class Producer {
 
     private static final Logger logger = LoggerFactory.getLogger(Producer.class);
-    private static final String TOPIC = "weather";
+    private static final String TOPIC = "alert";
 
     @Autowired
     private KafkaTemplate<String, byte[]> kafkaTemplate;
 
     public void sendMessage(byte [] message) {
-        logger.info(String.format("#### -> Producing serialized message -> %s", message));
+        logger.info(String.format("#### -> Producing Topic Alert serialized message (from ProducerWeatherStation)-> %s", message));
         this.kafkaTemplate.send(TOPIC, message);
     }
 }
