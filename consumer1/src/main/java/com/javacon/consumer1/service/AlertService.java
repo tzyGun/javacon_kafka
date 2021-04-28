@@ -1,6 +1,7 @@
 package com.javacon.consumer1.service;
 
 
+import com.javacon.consumer1.Restrictions;
 import com.javacon.consumer1.producer.Producer;
 import com.javacon.consumer1.utils.ByteArraySerializerUtil;
 import com.javacon.consumer1.Alert;
@@ -28,7 +29,7 @@ public class AlertService {
         city.getWeatherDatas().forEach(weatherData-> {
             if(Double.parseDouble(weatherData.getTemperature()) < 0.0d) {
                 Alert alert = new Alert();
-                alert.setMessage("Alert RCB : Załóż czapkę, jest ślisko, nie chódź w sandałach");
+                alert.setMessage("Alert RCB : " + Restrictions.VERY_IMPORTANT_RESTRICTION.toString());
                 try {
                     this.producer.sendMessage(ByteArraySerializerUtil.serialize(alert));
                     logger.info(String.format("#### -> Produced alert from Consumer 1 (AlertWeatherStation) -> %s", alert.toString()));

@@ -3,7 +3,7 @@ package com.javacon.producer.controller;
 import com.javacon.producer.City;
 import com.javacon.producer.service.WeatherService;
 import com.javacon.producer.dto.CityDTO;
-import com.javacon.producer.engine.Producer;
+import com.javacon.producer.kafkaclient.Producer;
 import com.javacon.producer.utils.ByteArraySerializerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
