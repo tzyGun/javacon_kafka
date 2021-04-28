@@ -1,1 +1,1 @@
-{"type":"record","name":"Alert","namespace":"com.tech3camp.consumer1","fields":[{"name":"message","type":"string"}]}
+{"type":"record","name":"Alert","namespace":"com.javacon.consumer1","fields":[{"name":"message","type":"string"}]}

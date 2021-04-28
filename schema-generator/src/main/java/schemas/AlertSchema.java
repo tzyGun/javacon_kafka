@@ -7,7 +7,7 @@ public class AlertSchema  implements AvroSchema{
     @Override
     public String buildSchema() {
         Schema alertData = SchemaBuilder.record("Alert")
-                                        .namespace("com.tech3camp.consumer1")
+                                        .namespace("com.javacon.consumer1")
                                         .fields()
                                         .requiredString("message")
                                         .endRecord();
